@@ -409,6 +409,8 @@ class StoryView extends StatefulWidget {
   // Indicator Foreground Color
   final Color? indicatorForegroundColor;
 
+  final EdgeInsets? padding;
+
   StoryView({
     required this.storyItems,
     required this.controller,
@@ -420,6 +422,7 @@ class StoryView extends StatefulWidget {
     this.onVerticalSwipeComplete,
     this.indicatorColor,
     this.indicatorForegroundColor,
+    this.padding
   });
 
   @override
@@ -634,7 +637,7 @@ class StoryViewState extends State<StoryView> with TickerProviderStateMixin {
                 bottom: widget.inline ? false : true,
                 // we use SafeArea here for notched and bezeles phones
                 child: Container(
-                  padding: EdgeInsets.symmetric(
+                  padding: widget.padding ?? EdgeInsets.symmetric(
                     horizontal: 16,
                     vertical: 8,
                   ),
